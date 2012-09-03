@@ -403,9 +403,10 @@ jasmine.createSpy = function(name) {
     var args = jasmine.util.argsToArray(arguments);
     spyObj.mostRecentCall.object = this;
     spyObj.mostRecentCall.args = args;
-    spyObj.argsForCall.push(args);
-    spyObj.calls.push({object: this, args: args});
-    return spyObj.plan.apply(this, arguments);
+    spyObj.argsForCall.push(args);                                       
+    var returnValue = spyObj.plan.apply(this, arguments);
+    spyObj.calls.push({object: this, args: args, returnValue: returnValue});
+    return returnValue;
   };
 
   var spy = new jasmine.Spy(name);

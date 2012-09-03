@@ -17,7 +17,8 @@ class JasmineDev < Thor
       "Spec.js",
       "Suite.js",
       "WaitsBlock.js",
-      "WaitsForBlock.js"
+      "WaitsForBlock.js",       
+      "BondReporter.js"
     ],
 
     :html => [

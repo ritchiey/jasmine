@@ -145,11 +145,11 @@ jasmine.Spec.prototype.finishCallback = function() {
 };
 
 jasmine.Spec.prototype.finish = function(onComplete) {
-  this.removeAllSpies();
   this.finishCallback();
   if (onComplete) {
     onComplete();
   }
+  this.removeAllSpies();
 };
 
 jasmine.Spec.prototype.after = function(doAfter) {
